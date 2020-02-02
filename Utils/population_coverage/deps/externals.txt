@@ -1,0 +1,1 @@
+population-coverage-pickle https://trac.liai.org/svn/iedbtools/djangotools-deps/population-coverage-pickle/tags/v1.1.2

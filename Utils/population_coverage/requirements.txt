@@ -1,0 +1,2 @@
+matplotlib==2.0.0
+file:../population_coverage/deps/population-coverage-pickle#egg=population_coverage_pickle
