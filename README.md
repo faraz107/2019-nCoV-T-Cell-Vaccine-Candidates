@@ -6,10 +6,9 @@ Latest version of [**R**](https://www.r-project.org/) (version 3.6.0 or
 later) and [**RStudio**](https://rstudio.com/products/rstudio/download/)
 (version 1.2.5 or later) installed.
 
-Following **R** packages and their dependencies are required. Upon first
-run of `init.R` file, it will check if these are installed and attempt
-to install them. Tested to work on **Windows** and **Mac** operating
-sytems.
+Set the working directory to the downloaded repository folder in local system.
+
+Following **R** packages and their dependencies are required. 
 
     + here 
     + RColorBrewer 
@@ -39,4 +38,8 @@ sytems.
 
 - Open the `main.R` R script file in RStudio and run. This will run the analysis reproduce the results.
 - Outputs will be in `Data` folder.
-    
+- *Population coverage code* works only with an available Conda Python 2.7 environment (named as "py27") on the system.
+- If the said Conda environment is not avaialable then the population coverages can be computed online using [IEDB Analysis Resource](http://tools.iedb.org/population/). Select the "Population" (*China* or *World*) and "Calculation option" (*Class I and II combined*) Upload one of the following data files where is asks to "Enter epitope / MHC restriction data in the form below or select a file:
+    - `Tcell_epitopes_China` for computing coverages for set of epitopes identified to maximize population coverage in China.
+    - `Tcell_epitopes_World` for computing coverages for set of epitopes identified to maximize global population coverage.
+ 
