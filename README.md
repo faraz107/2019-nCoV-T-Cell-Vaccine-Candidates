@@ -42,7 +42,7 @@ Following **R** packages and their dependencies are required.
 - If the said Conda environment is not avaialable then the population coverages can be computed online using [IEDB Analysis Resource](http://tools.iedb.org/population/). 
     - Select the "Population" (*China* or *World*).
     - Select "Calculation option" (*Class I and II combined*) 
-    - Upload one of the following data files where is asks to "Enter epitope / MHC restriction data in the form below or select a file:
+    - Proide one of the following files (located within `Data` folder) to the option "Enter epitope / MHC restriction data in the form below or select a file":
         - `Tcell_epitopes_China` for computing coverages for set of epitopes identified to maximize population coverage in China.
         - `Tcell_epitopes_World` for computing coverages for set of epitopes identified to maximize global population coverage.
  
