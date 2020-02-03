@@ -18,7 +18,7 @@ library(RColorBrewer)
 # Set the working directory to the repository folder
 # setwd("/repo-BetaCov")
 
-ID_THRESH = 0.90
+ID_THRESH = 0.99
 NUM_MAX_MISMATCH = 0
 GAPratio = 0.15
 
@@ -110,7 +110,7 @@ saveRDS(object = df, file = here("Data", paste0("df-Tepitopes-", VIRUS)))
 saveRDS(object = df_mapping_full, file = here("Data", paste0("df-fullTepitopes-", VIRUS)))
 
 
-# Mapping positive-T cell assay based T cell epitopes ----
+# Mapping positive-MHC assay based T cell epitopes ----
 
 VIRUSES <- c(VIRUS)
 
@@ -139,39 +139,11 @@ df <- df %>% mutate(order = (VIRUS>ID_THRESH))
 
 df$Source <- "SARS" #VIRUS
 
+df <- df %>% filter(`MHC Allele Names` != "-N/A-")
+
 saveRDS(object = df, file = here("Data", paste0("df-MHC-epitopes-", VIRUS)))
 
 saveRDS(object = df_mapping_full, file = here("Data", paste0("df-fullMHC-epitopes-", VIRUS)))
-
-# Epitope HLA files for computing population coverages of T cell epitopes set online at: http://tools.iedb.org/population/ -----
-
-load(here("Data", "immunogens-W-CN-proteins-N-S"))
-
-df <- dplyr::full_join(immunogenW, df_fullMHCepitopes %>% filter((Protein == "S") | (Protein == "N")) %>% 
-                         filter(`MHC Allele Names` %in% immunogenCN$`MHC Allele Names`) %>% 
-                         select(Epitope, `MHC Allele Names`))
-
-df %>% group_by(`MHC Allele Names`) %>% summarise(Epitopes = paste(Epitope, collapse=", ")) -> temp
-
-df <- left_join(x = df, y = temp, "MHC Allele Names") %>% filter(!is.na(SCov))
-
-df <- df %>% select(Epitope, MHCs) %>% mutate(query = paste(Epitope, MHCs, sep = " "))
-
-write_delim(x = as.data.frame(df$query), delim = "\n", col_names = FALSE, path = here("Data", "Tcell_epitopes_World"))
-
-
-df <- dplyr::full_join(immunogenCN, df_fullMHCepitopes %>% filter((Protein == "S") | (Protein == "N")) %>% 
-                         filter(`MHC Allele Names` %in% immunogenCN$`MHC Allele Names`) %>% 
-                         select(Epitope, `MHC Allele Names`))
-
-df %>% group_by(`MHC Allele Names`) %>% summarise(Epitopes = paste(Epitope, collapse=", ")) -> temp
-
-df <- left_join(x = df, y = temp, "MHC Allele Names") %>% filter(!is.na(SCov))
-
-df <- df %>% select(Epitope, MHCs) %>% mutate(query = paste(Epitope, MHCs, sep = " "))
-
-write_delim(x = as.data.frame(df$query), delim = "\n", col_names = FALSE, path = here("Data", "Tcell_epitopes_China"))
-
 
 # Immunogens from positive-MHC assay based T cell epitopes epitopes --------
 # WORKS ONLY WITH Conda Python 2.7 environment named as "py27"
@@ -181,9 +153,9 @@ write_delim(x = as.data.frame(df$query), delim = "\n", col_names = FALSE, path =
 
 # If Conda Python 2.7 environment named as "py27" is available then uncomment the following and run
 
-# df <- readRDS(here("Data", paste0("df-fullMHC-epitopes-", VIRUS)))
+# df <- readRDS(here("Data", paste0("df-MHC-epitopes-", VIRUS)))
 # 
-# df <- df %>% mutate(meanID = BetaCov) %>% filter(Protein %in% c("S", "N"))
+# df <- df %>% mutate(meanID = nCov) %>% filter(Protein %in% c("S", "N"))
 # 
 # sa_countries <- c("World", "China")
 # 
