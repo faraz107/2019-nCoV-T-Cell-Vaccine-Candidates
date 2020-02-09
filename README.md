@@ -55,6 +55,8 @@ Following **R** packages and their dependencies are required.
  
  #### [Processed MSAs](https://faraz107.gitlab.io/wuhanvirusanalysis/)
  
+ #### [Detailed steps for population coverage computation through IEDB online resource](https://faraz107.gitlab.io/wuhanvirusanalysis/)
+ 
  ### Troubleshooting
  
  For any questions or comments related to the code and data, please send email to: faraz107@gmail.com.
