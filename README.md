@@ -51,9 +51,9 @@ Following **R** packages and their dependencies are required.
         - `Tcell_epitopes_World` 
             (for computing coverages for set of MHC alleles identified to maximize global population coverage.)
  
- ## [Detailed steps for downloading raw data](https://faraz107.gitlab.io/wuhanvirusanalysis/)
+ #### [Detailed steps for downloading raw data](https://faraz107.gitlab.io/wuhanvirusanalysis/)
  
- ## [Processed MSAs](https://faraz107.gitlab.io/wuhanvirusanalysis/)
+ #### [Processed MSAs](https://faraz107.gitlab.io/wuhanvirusanalysis/)
  
  ### Troubleshooting
  
