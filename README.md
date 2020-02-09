@@ -53,4 +53,4 @@ Following **R** packages and their dependencies are required.
  
  ### Troubleshooting
  
- For any questions or comments related to the code and data, please email at faraz107@gmail.com.
+ For any questions or comments related to the code and data, please send email to: faraz107@gmail.com.
