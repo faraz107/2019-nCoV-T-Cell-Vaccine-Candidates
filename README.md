@@ -51,3 +51,6 @@ Following **R** packages and their dependencies are required.
         - `Tcell_epitopes_World` 
             (for computing coverages for set of MHC alleles identified to maximize global population coverage.)
  
+ ### Troubleshooting
+ 
+ For any questions or comments related to the code and data, please email at faraz107@gmail.com.
