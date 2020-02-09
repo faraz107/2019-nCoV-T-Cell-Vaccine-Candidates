@@ -47,7 +47,7 @@ Following **R** packages and their dependencies are required.
     - Select "Calculation option" (*Class I and II combined*) 
     - Proide one of the following files (located within `Data` folder) to the option "Enter epitope / MHC restriction data in the form below or select a file":
         - `Tcell_epitopes_China` 
-            (for computing coverages for set of epitopes identified to maximize population coverage in China.)
+            (for computing coverages for set of MHC alleles identified to maximize population coverage in China.)
         - `Tcell_epitopes_World` 
-            (for computing coverages for set of epitopes identified to maximize global population coverage.)
+            (for computing coverages for set of MHC alleles identified to maximize global population coverage.)
  
