@@ -40,7 +40,9 @@ dir_create(path = here("Data", "Filtered"))
 raw_ls <- dir_ls(path = here("Data", "Raw"))
 
 exclude_ls <- c("EPI_ISL_402121", "EPI_ISL_402126", "EPI_ISL_403928", "EPI_ISL_403931",
-                "EPI_ISL_402120", "EPI_ISL_406959", "EPI_ISL_406960")
+                "EPI_ISL_402120", "EPI_ISL_406959", "EPI_ISL_406960", "EPI_ISL_408068",
+                "EPI_ISL_408975")
+
 
 filtered_ls <- vector(mode = "character")
 
